@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "202645824825",
+    "project_id": "arrabiyah-apk",
+    "storage_bucket": "arrabiyah-apk.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202645824825:android:41a4f1b69448eccc3ab4e8",
+        "android_client_info": {
+          "package_name": "com.arabiyyah.host"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7OFIMVM0hgfiJA0tR9bqdD8Rr_Oew05U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202645824825:android:8ef1a889dc5260473ab4e8",
+        "android_client_info": {
+          "package_name": "com.arabiyyah.siswa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7OFIMVM0hgfiJA0tR9bqdD8Rr_Oew05U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
