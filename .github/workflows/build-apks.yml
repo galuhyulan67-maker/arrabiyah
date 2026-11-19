@@ -1,0 +1,73 @@
+name: Build Arabiyyah Release APKs
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-host:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/host
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK release (Host)
+        run: flutter build apk --release
+
+      - name: Upload Host APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: arabiyyah-host-apk
+          path: apps/host/build/app/outputs/flutter-apk/app-release.apk
+
+  build-client:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/client
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK release (Siswa)
+        run: flutter build apk --release
+
+      - name: Upload Siswa APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: arabiyyah-siswa-apk
+          path: apps/client/build/app/outputs/flutter-apk/app-release.apk
